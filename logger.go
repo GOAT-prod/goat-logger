@@ -1,6 +1,6 @@
 package goatlogger
 
-type logger struct {
+type Logger struct {
 	application string `json:"app"`
 	tag         string `json:"tag"`
 }
