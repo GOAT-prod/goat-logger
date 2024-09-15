@@ -13,28 +13,28 @@ type logInfo struct {
 	msg         string   `json:"message"`
 }
 
-func New(app string) logger {
-	return logger{
+func New(app string) Logger {
+	return Logger{
 		application: app,
 	}
 }
 
-func (l *logger) SetTag(tag string) {
+func (l *Logger) SetTag(tag string) {
 	l.tag = tag
 }
 
-func (l *logger) Info(message string) {
+func (l *Logger) Info(message string) {
 	printLog(Info, l.application, l.tag, message)
 }
 
-func (l *logger) Debug(message string) {
+func (l *Logger) Debug(message string) {
 	printLog(Debug, l.application, l.tag, message)
 }
 
-func (l *logger) Error(message string) {
+func (l *Logger) Error(message string) {
 	printLog(Error, l.application, l.tag, message)
 }
 
-func (l *logger) Panic(message string) {
+func (l *Logger) Panic(message string) {
 	printLog(Panic, l.application, l.tag, message)
 }
