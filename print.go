@@ -12,11 +12,11 @@ var (
 
 func printLog(level LogLevel, app, tag, msg string) {
 	info := logInfo{
-		application: app,
-		level:       level,
-		time:        time.Now().In(moscowTimeLocation).Format(time.RFC3339),
-		tag:         tag,
-		msg:         msg,
+		Application: app,
+		Level:       level,
+		Time:        time.Now().In(moscowTimeLocation).Format(time.RFC3339),
+		Tag:         tag,
+		Msg:         msg,
 	}
 
 	infoBytes, _ := json.Marshal(info)

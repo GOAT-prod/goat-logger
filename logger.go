@@ -1,40 +1,40 @@
 package goatlogger
 
 type Logger struct {
-	application string `json:"app"`
-	tag         string `json:"tag"`
+	Application string `json:"app"`
+	Tag         string `json:"tag"`
 }
 
 type logInfo struct {
-	application string   `json:"app"`
-	level       LogLevel `json:"level"`
-	time        string   `json:"time"`
-	tag         string   `json:"tag"`
-	msg         string   `json:"message"`
+	Application string   `json:"app"`
+	Level       LogLevel `json:"level"`
+	Time        string   `json:"time"`
+	Tag         string   `json:"tag"`
+	Msg         string   `json:"message"`
 }
 
 func New(app string) Logger {
 	return Logger{
-		application: app,
+		Application: app,
 	}
 }
 
 func (l *Logger) SetTag(tag string) {
-	l.tag = tag
+	l.Tag = tag
 }
 
 func (l *Logger) Info(message string) {
-	printLog(Info, l.application, l.tag, message)
+	printLog(Info, l.Application, l.Tag, message)
 }
 
 func (l *Logger) Debug(message string) {
-	printLog(Debug, l.application, l.tag, message)
+	printLog(Debug, l.Application, l.Tag, message)
 }
 
 func (l *Logger) Error(message string) {
-	printLog(Error, l.application, l.tag, message)
+	printLog(Error, l.Application, l.Tag, message)
 }
 
 func (l *Logger) Panic(message string) {
-	printLog(Panic, l.application, l.tag, message)
+	printLog(Panic, l.Application, l.Tag, message)
 }
