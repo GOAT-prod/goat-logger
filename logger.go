@@ -1,5 +1,7 @@
 package goatlogger
 
+import "os"
+
 type Logger struct {
 	Application string `json:"app"`
 	Tag         string `json:"tag"`
@@ -37,4 +39,5 @@ func (l *Logger) Error(message string) {
 
 func (l *Logger) Panic(message string) {
 	printLog(Panic, l.Application, l.Tag, message)
+	os.Exit(1)
 }
